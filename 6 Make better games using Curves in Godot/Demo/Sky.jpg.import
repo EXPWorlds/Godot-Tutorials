@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sky.jpg-4150e2aaeab55242ef068f3a28d7f3f5.stex"
+path="res://.import/Sky.jpg-419fbb27475dfe8c5f4699b022a7b25d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://6 Make better games using Curves in Godot/Sky.jpg"
-dest_files=[ "res://.import/Sky.jpg-4150e2aaeab55242ef068f3a28d7f3f5.stex" ]
+source_file="res://6 Make better games using Curves in Godot/Demo/Sky.jpg"
+dest_files=[ "res://.import/Sky.jpg-419fbb27475dfe8c5f4699b022a7b25d.stex" ]
 
 [params]
 

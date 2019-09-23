@@ -1,7 +1,7 @@
 extends Node2D
 
-onready var white_cursor = preload("res://7 Custom Mouse Cursors/white_sigil_icon.png")
-onready var black_cursor = preload("res://7 Custom Mouse Cursors/black_sigil_icon.png")
+onready var white_cursor = preload("res://7 Custom Mouse Cursors/Demo/white_sigil_icon.png")
+onready var black_cursor = preload("res://7 Custom Mouse Cursors/Demo/black_sigil_icon.png")
 onready var Icon = self.get_node("Icon")
 
 func _ready():

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Falcon9.png-18216e77b577f3eb8ea3b62aa010eabc.stex"
+path="res://.import/Falcon9.png-de506611085c2e65e45b4bfbc89b58b8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://6 Make better games using Curves in Godot/Falcon9.png"
-dest_files=[ "res://.import/Falcon9.png-18216e77b577f3eb8ea3b62aa010eabc.stex" ]
+source_file="res://6 Make better games using Curves in Godot/Demo/Falcon9.png"
+dest_files=[ "res://.import/Falcon9.png-de506611085c2e65e45b4bfbc89b58b8.stex" ]
 
 [params]
 

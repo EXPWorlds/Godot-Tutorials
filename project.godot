@@ -23,3 +23,7 @@ config/icon="res://icon.png"
 window/size/width=1080
 window/size/height=768
 mouse_cursor/custom_image="res://7 Custom Mouse Cursor/Tutorial/Mouse_Curser.png"
+
+[rendering]
+
+quality/filters/msaa=2

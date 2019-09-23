@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Mouse_Curser64px.png-5ae0f0282871cbde75b9599e403888a0.stex"
+path="res://.import/Mouse_Curser64px.png-5d677c882d21ce8b0ea4869a864282a0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://7 Custom Mouse Cursors/Mouse_Curser64px.png"
-dest_files=[ "res://.import/Mouse_Curser64px.png-5ae0f0282871cbde75b9599e403888a0.stex" ]
+source_file="res://7 Custom Mouse Cursors/Demo/Mouse_Curser64px.png"
+dest_files=[ "res://.import/Mouse_Curser64px.png-5d677c882d21ce8b0ea4869a864282a0.stex" ]
 
 [params]
 

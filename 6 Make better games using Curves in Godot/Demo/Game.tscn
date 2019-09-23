@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://6 Make better games using Curves in Godot/Game.gd" type="Script" id=1]
-[ext_resource path="res://6 Make better games using Curves in Godot/landing_curve.tres" type="Curve" id=2]
-[ext_resource path="res://6 Make better games using Curves in Godot/Sky.jpg" type="Texture" id=3]
-[ext_resource path="res://6 Make better games using Curves in Godot/Falcon9.png" type="Texture" id=4]
-[ext_resource path="res://6 Make better games using Curves in Godot/Fire.tscn" type="PackedScene" id=5]
+[ext_resource path="res://6 Make better games using Curves in Godot/Demo/Game.gd" type="Script" id=1]
+[ext_resource path="res://6 Make better games using Curves in Godot/Demo/landing_curve.tres" type="Curve" id=2]
+[ext_resource path="res://6 Make better games using Curves in Godot/Demo/Sky.jpg" type="Texture" id=3]
+[ext_resource path="res://6 Make better games using Curves in Godot/Demo/Falcon9.png" type="Texture" id=4]
+[ext_resource path="res://6 Make better games using Curves in Godot/Demo/Fire.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Fonts/FreeUniversal-Regular.ttf" type="DynamicFontData" id=6]
 
 [sub_resource type="DynamicFont" id=1]

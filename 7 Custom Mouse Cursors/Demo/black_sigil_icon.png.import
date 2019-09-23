@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/white_sigil_icon.png-fb37aaf05bd9c587a97ef0a813727b28.stex"
+path="res://.import/black_sigil_icon.png-7cb9f09e856aede16653e8b77e527d9c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://7 Custom Mouse Cursors/white_sigil_icon.png"
-dest_files=[ "res://.import/white_sigil_icon.png-fb37aaf05bd9c587a97ef0a813727b28.stex" ]
+source_file="res://7 Custom Mouse Cursors/Demo/black_sigil_icon.png"
+dest_files=[ "res://.import/black_sigil_icon.png-7cb9f09e856aede16653e8b77e527d9c.stex" ]
 
 [params]
 
