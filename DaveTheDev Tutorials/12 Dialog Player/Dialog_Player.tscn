@@ -1,0 +1,158 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://DaveTheDev Tutorials/12 Dialog Player/textures/menu_section_9patch.png" type="Texture" id=1]
+[ext_resource path="res://DaveTheDev Tutorials/12 Dialog Player/fonts/Cave-Story.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 38
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "TextDisplay"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="DynamicFont" id=3]
+size = 36
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 38
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=5]
+resource_name = "PressSpaceBar"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
+
+[node name="Dialog_Player" type="Node"]
+
+[node name="Dialog_Box" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Body_NinePatchRect" type="NinePatchRect" parent="Dialog_Box"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -360.0
+margin_top = -128.0
+margin_right = 360.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 720, 256 )
+texture = ExtResource( 1 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Dialog_Box/Body_NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 14.6395
+margin_top = 48.0
+margin_right = -17.3605
+margin_bottom = -48.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Body_Label" type="Label" parent="Dialog_Box/Body_NinePatchRect/MarginContainer"]
+margin_right = 688.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 1 )
+text = "This is where the body of the dialog text goes.
+Press F6 to play! ^_^"
+autowrap = true
+
+[node name="Body_AnimationPlayer" type="AnimationPlayer" parent="Dialog_Box/Body_NinePatchRect/MarginContainer/Body_Label"]
+anims/TextDisplay = SubResource( 2 )
+
+[node name="Speaker_NinePatchRect" type="NinePatchRect" parent="Dialog_Box/Body_NinePatchRect"]
+margin_left = -17.4952
+margin_top = -24.4934
+margin_right = 162.505
+margin_bottom = 23.5066
+rect_min_size = Vector2( 180, 48 )
+texture = ExtResource( 1 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Speaker_Label" type="Label" parent="Dialog_Box/Body_NinePatchRect/Speaker_NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 3 )
+text = "Speaker"
+align = 1
+valign = 1
+
+[node name="SpaceBar_NinePatchRect" type="NinePatchRect" parent="Dialog_Box/Body_NinePatchRect"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -224.283
+margin_top = -37.6673
+margin_right = 31.7166
+margin_bottom = 10.3327
+rect_min_size = Vector2( 256, 48 )
+texture = ExtResource( 1 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpaceBar_Label" type="Label" parent="Dialog_Box/Body_NinePatchRect/SpaceBar_NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 4 )
+text = "Press Spacebar"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Dialog_Box/Body_NinePatchRect/SpaceBar_NinePatchRect"]
+autoplay = "PressSpaceBar"
+anims/PressSpaceBar = SubResource( 5 )

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Sphere.obj-9353544a4251a86c6925f63f2e74f28c.mesh"
+
+[deps]
+
+files=[ "res://.import/Sphere.obj-9353544a4251a86c6925f63f2e74f28c.mesh" ]
+
+source_file="res://DaveTheDev Tutorials/10 Using Multimeshes/Demo/Sphere.obj"
+dest_files=[ "res://.import/Sphere.obj-9353544a4251a86c6925f63f2e74f28c.mesh", "res://.import/Sphere.obj-9353544a4251a86c6925f63f2e74f28c.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

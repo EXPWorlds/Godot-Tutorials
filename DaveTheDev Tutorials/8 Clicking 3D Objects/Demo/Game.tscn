@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://DaveTheDev Tutorials/8 Clicking 3D Objects/Demo/Sphere.tscn" type="PackedScene" id=1]
+
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_unshaded = true
+params_cull_mode = 1
+params_grow = true
+params_grow_amount = 0.02
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+next_pass = SubResource( 1 )
+params_diffuse_mode = 4
+roughness = 0.06
+
+[sub_resource type="SpatialMaterial" id=3]
+next_pass = SubResource( 1 )
+params_diffuse_mode = 4
+roughness = 0.06
+
+[sub_resource type="SpatialMaterial" id=4]
+next_pass = SubResource( 1 )
+params_diffuse_mode = 4
+roughness = 0.06
+
+[node name="Game" type="Spatial"]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 3, 3, 3 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.819152, 0.573577, 0, -0.573577, 0.819152, 0, 1.30327, 2.21711 )
+
+[node name="Sphere" parent="." instance=ExtResource( 1 )]
+editor/display_folded = true
+
+[node name="Mesh_Sphere" parent="Sphere" index="0"]
+material/0 = SubResource( 2 )
+
+[node name="Sphere2" parent="." instance=ExtResource( 1 )]
+editor/display_folded = true
+transform = Transform( -0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 0, 0, 0 )
+
+[node name="Mesh_Sphere" parent="Sphere2" index="0"]
+material/0 = SubResource( 3 )
+
+[node name="Sphere3" parent="." instance=ExtResource( 1 )]
+editor/display_folded = true
+transform = Transform( -0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 0, 0, 0 )
+
+[node name="Mesh_Sphere" parent="Sphere3" index="0"]
+material/0 = SubResource( 4 )
+
+
+[editable path="Sphere"]
+
+[editable path="Sphere2"]
+
+[editable path="Sphere3"]

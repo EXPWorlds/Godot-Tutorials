@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://DaveTheDev Tutorials/8 Clicking 3D Objects/Tutorial/Sphere.gd" type="Script" id=1]
+[ext_resource path="res://DaveTheDev Tutorials/8 Clicking 3D Objects/Sphere.obj" type="ArrayMesh" id=2]
+
+
+[sub_resource type="SphereShape" id=1]
+radius = 0.5
+
+[node name="Game" type="Spatial"]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 3, 3, 3 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.58749 )
+
+[node name="Sphere" type="Spatial" parent="."]
+script = ExtResource( 1 )
+
+[node name="Sphere" type="MeshInstance" parent="Sphere"]
+mesh = ExtResource( 2 )
+material/0 = null
+
+[node name="Area" type="Area" parent="Sphere/Sphere"]
+input_ray_pickable = true
+
+[node name="CollisionShape" type="CollisionShape" parent="Sphere/Sphere/Area"]
+shape = SubResource( 1 )
+
+[connection signal="input_event" from="Sphere/Sphere/Area" to="Sphere" method="_on_Area_input_event"]

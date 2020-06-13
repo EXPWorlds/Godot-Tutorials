@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Sphere.obj-0565b19d9e6991b9ec326571b838f6ed.mesh"
+
+[deps]
+
+files=[ "res://.import/Sphere.obj-0565b19d9e6991b9ec326571b838f6ed.mesh" ]
+
+source_file="res://DaveTheDev Tutorials/8 Clicking 3D Objects/Sphere.obj"
+dest_files=[ "res://.import/Sphere.obj-0565b19d9e6991b9ec326571b838f6ed.mesh", "res://.import/Sphere.obj-0565b19d9e6991b9ec326571b838f6ed.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Sphere.obj-db72b34bb63b8dea5ef5ed42310db4ae.mesh"
+
+[deps]
+
+files=[ "res://.import/Sphere.obj-db72b34bb63b8dea5ef5ed42310db4ae.mesh" ]
+
+source_file="res://DaveTheDev Tutorials/9 Using Perlin Noise/Demo/Sphere.obj"
+dest_files=[ "res://.import/Sphere.obj-db72b34bb63b8dea5ef5ed42310db4ae.mesh", "res://.import/Sphere.obj-db72b34bb63b8dea5ef5ed42310db4ae.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

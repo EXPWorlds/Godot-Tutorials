@@ -1,0 +1,93 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://DaveTheDev Tutorials/6 Make better games using Curves in Godot/Demo/Game.gd" type="Script" id=1]
+[ext_resource path="res://DaveTheDev Tutorials/6 Make better games using Curves in Godot/Demo/landing_curve.tres" type="Curve" id=2]
+[ext_resource path="res://DaveTheDev Tutorials/6 Make better games using Curves in Godot/Demo/Sky.jpg" type="Texture" id=3]
+[ext_resource path="res://DaveTheDev Tutorials/6 Make better games using Curves in Godot/Demo/Falcon9.png" type="Texture" id=4]
+[ext_resource path="res://DaveTheDev Tutorials/6 Make better games using Curves in Godot/Demo/Fire.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Fonts/FreeUniversal-Regular.ttf" type="DynamicFontData" id=6]
+
+
+[sub_resource type="DynamicFont" id=1]
+size = 46
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 48
+font_data = ExtResource( 6 )
+
+[node name="Game" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+landing_curve = ExtResource( 2 )
+
+[node name="Sky" type="Sprite" parent="."]
+modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
+position = Vector2( 505.217, 379.44 )
+scale = Vector2( 0.94, 0.66 )
+texture = ExtResource( 3 )
+
+[node name="Falcon9" type="Sprite" parent="."]
+position = Vector2( 214.42, 146 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="Fire" parent="Falcon9" instance=ExtResource( 5 )]
+show_behind_parent = true
+position = Vector2( -2.33154, 243.119 )
+rotation = 3.14159
+
+[node name="Ground" type="ColorRect" parent="."]
+margin_left = 108.83
+margin_top = 710.0
+margin_right = 308.83
+margin_bottom = 760.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 418.995
+margin_top = 102.028
+margin_right = 498.995
+margin_bottom = 162.028
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "Info"
+
+[node name="Land_Button" type="Button" parent="."]
+margin_left = 418.824
+margin_top = 33.1163
+margin_right = 652.824
+margin_bottom = 99.1163
+custom_fonts/font = SubResource( 2 )
+text = "Auto Land"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reset_Button" type="Button" parent="."]
+margin_left = 669.552
+margin_top = 33.0
+margin_right = 813.552
+margin_bottom = 102.0
+custom_fonts/font = SubResource( 3 )
+text = "Reset"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Land_Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Reset_Button" to="." method="_on_Reset_Button_pressed"]
+
+[editable path="Falcon9/Fire"]

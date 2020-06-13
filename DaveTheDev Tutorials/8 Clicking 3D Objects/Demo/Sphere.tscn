@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://DaveTheDev Tutorials/8 Clicking 3D Objects/Demo/Sphere.gd" type="Script" id=1]
+[ext_resource path="res://DaveTheDev Tutorials/8 Clicking 3D Objects/Sphere.obj" type="ArrayMesh" id=2]
+
+
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_unshaded = true
+params_cull_mode = 1
+params_grow = true
+params_grow_amount = 0.02
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+next_pass = SubResource( 1 )
+params_diffuse_mode = 4
+params_specular_mode = 4
+roughness = 0.05
+
+[sub_resource type="SphereShape" id=3]
+radius = 0.5
+
+[node name="Sphere" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Mesh_Sphere" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 2 )
+
+[node name="Area" type="Area" parent="Mesh_Sphere"]
+input_ray_pickable = true
+
+[node name="CollisionShape" type="CollisionShape" parent="Mesh_Sphere/Area"]
+shape = SubResource( 3 )
+
+[connection signal="input_event" from="Mesh_Sphere/Area" to="." method="_on_Area_input_event"]

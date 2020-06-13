@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://DaveTheDev Tutorials/7 Custom Mouse Cursors/Demo/Mouse_Cursor.tscn" type="PackedScene" id=1]
+
+
+[node name="Game" type="Node"]
+
+[node name="Mouse_Cursor" parent="." instance=ExtResource( 1 )]
+

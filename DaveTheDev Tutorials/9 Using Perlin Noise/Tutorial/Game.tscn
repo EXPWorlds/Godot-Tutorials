@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://DaveTheDev Tutorials/9 Using Perlin Noise/Tutorial/Game.gd" type="Script" id=1]
+[ext_resource path="res://DaveTheDev Tutorials/9 Using Perlin Noise/Tutorial/Sphere.obj" type="ArrayMesh" id=2]
+
+
+[sub_resource type="OpenSimplexNoise" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_unshaded = true
+params_cull_mode = 1
+params_grow = true
+params_grow_amount = 0.03
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+next_pass = SubResource( 2 )
+flags_unshaded = true
+
+[node name="Game" type="Spatial"]
+script = ExtResource( 1 )
+perlin_noise = SubResource( 1 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5 )
+
+[node name="Sphere" type="MeshInstance" parent="."]
+mesh = ExtResource( 2 )
+material/0 = SubResource( 3 )
+

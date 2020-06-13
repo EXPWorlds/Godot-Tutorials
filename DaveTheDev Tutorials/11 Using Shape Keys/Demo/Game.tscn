@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://DaveTheDev Tutorials/11 Using Shape Keys/Demo/Spider.mesh" type="ArrayMesh" id=1]
+[ext_resource path="res://DaveTheDev Tutorials/11 Using Shape Keys/Demo/spider.material" type="Material" id=2]
+[ext_resource path="res://DaveTheDev Tutorials/11 Using Shape Keys/Demo/Spider.gd" type="Script" id=3]
+
+
+[sub_resource type="OpenSimplexNoise" id=1]
+
+[node name="Game" type="Spatial"]
+
+[node name="Spider" type="MeshInstance" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
+mesh = ExtResource( 1 )
+blend_shapes/Abdomin_Size = 0.0
+blend_shapes/Eyes_Size = 0.0
+blend_shapes/Legs_Length = 0.0
+blend_shapes/Legs_Thickness = 0.0
+blend_shapes/Mandables_Length = 0.0
+blend_shapes/Mandables_Size = 0.0
+material/0 = ExtResource( 2 )
+script = ExtResource( 3 )
+perlin_noise = SubResource( 1 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.979289, -0.054537, 0.194982, -0.0452031, 0.879836, 0.473123, -0.197355, -0.472138, 0.859149, 0.431353, 1.618, 2.42832 )
