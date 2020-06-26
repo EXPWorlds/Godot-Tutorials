@@ -6,7 +6,8 @@
 script = ExtResource( 1 )
 TYPE = "EXP_Story_editor"
 names = {
-"DialogPlayer/Test": 1
+"DialogPlayer/Test": 1,
+"DialogPlayer/VariableInjection": 2
 }
 story = {
 1: {
@@ -77,6 +78,78 @@ story = {
 "rect_size": Vector2( 324, 137 ),
 "slot_amount": 1,
 "text": "<end>",
+"type": "line"
+}
+}
+},
+2: {
+"available_nid": [  ],
+"groups": [  ],
+"human_readable_description": "This is a test of the variable injection.",
+"name": "DialogPlayer/VariableInjection",
+"nodes": {
+1: {
+"graph_offset": Vector2( 40, 40 ),
+"links": {
+0: 3
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<start>",
+"type": "line"
+},
+2: {
+"graph_offset": Vector2( 700, 520 ),
+"links": {
+
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<end>",
+"type": "line"
+},
+3: {
+"graph_offset": Vector2( 40, 220 ),
+"links": {
+0: 4
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>DaveTheDev</speaker>
+<dialog>Hello, if variable injection is working <variable>Test</variable> text string will show up here.</dialog>",
+"type": "line"
+},
+4: {
+"graph_offset": Vector2( 40, 400 ),
+"links": {
+0: 5
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Program</speaker>
+<dialog>Because of variable injection I know the player's level is <variable>PLAYER/LEVEL</variable> and that PI equals <variable>PI</variable>.</dialog>",
+"type": "line"
+},
+5: {
+"graph_offset": Vector2( 620, 40 ),
+"links": {
+0: 6
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Program</speaker>
+<dialog>The current date and time is... <variable>DATE</variable>.</dialog>",
+"type": "line"
+},
+6: {
+"graph_offset": Vector2( 620, 240 ),
+"links": {
+0: 2
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Program</speaker>
+<dialog>and I know the system I'm running on is <variable>SYSTEM</variable>.</dialog>",
 "type": "line"
 }
 }

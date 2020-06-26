@@ -49,8 +49,53 @@ story = {
 "text": "<end>"
 }
 }
+},
+2: {
+"nodes": {
+1: {
+"links": {
+0: 3
+},
+"text": "<start>"
+},
+2: {
+"links": {
+
+},
+"text": "<end>"
+},
+3: {
+"links": {
+0: 4
+},
+"text": "<speaker>DaveTheDev</speaker>
+<dialog>Hello, if variable injection is working <variable>Test</variable> text string will show up here.</dialog>"
+},
+4: {
+"links": {
+0: 5
+},
+"text": "<speaker>Program</speaker>
+<dialog>Because of variable injection I know the player's level is <variable>PLAYER/LEVEL</variable> and that PI equals <variable>PI</variable>.</dialog>"
+},
+5: {
+"links": {
+0: 6
+},
+"text": "<speaker>Program</speaker>
+<dialog>The current date and time is... <variable>DATE</variable>.</dialog>"
+},
+6: {
+"links": {
+0: 2
+},
+"text": "<speaker>Program</speaker>
+<dialog>and I know the system I'm running on is <variable>SYSTEM</variable>.</dialog>"
+}
+}
 }
 }
 names = {
-"DialogPlayer/Test": 1
+"DialogPlayer/Test": 1,
+"DialogPlayer/VariableInjection": 2
 }

@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://DaveTheDev Tutorials/12 Dialog Player/textures/menu_section_9patch.png" type="Texture" id=1]
 [ext_resource path="res://DaveTheDev Tutorials/12 Dialog Player/fonts/Cave-Story.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://DaveTheDev Tutorials/12 Dialog Player/Dialog_Player.gd" type="Script" id=3]
+[ext_resource path="res://DaveTheDev Tutorials/12 Dialog Player/Simulated_Registry.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 38
@@ -161,4 +162,7 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Dialog_Box/Body_NinePatchRect/SpaceBar_NinePatchRect"]
 autoplay = "PressSpaceBar"
 anims/PressSpaceBar = SubResource( 5 )
+
+[node name="Simulated_Registry" type="Node" parent="."]
+script = ExtResource( 4 )
 [connection signal="animation_finished" from="Dialog_Box/Body_NinePatchRect/MarginContainer/Body_Label/Body_AnimationPlayer" to="." method="_on_Body_AnimationPlayer_animation_finished"]

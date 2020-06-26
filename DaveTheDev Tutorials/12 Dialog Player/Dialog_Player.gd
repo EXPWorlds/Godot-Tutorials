@@ -3,6 +3,7 @@ extends Node
 onready var _Body_AnimationPlayer = find_node("Body_AnimationPlayer")
 onready var _Body_LBL = find_node("Body_Label")
 onready var _Dialog_Box = find_node("Dialog_Box")
+onready var _Registry = find_node("Simulated_Registry")
 onready var _Speaker_LBL = find_node("Speaker_Label")
 onready var _SpaceBar_Icon = find_node("SpaceBar_NinePatchRect")
 
@@ -23,7 +24,7 @@ func _ready():
 	_Dialog_Box.visible = false
 	_SpaceBar_Icon.visible = false
 	
-	play_dialog("DialogPlayer/Test")
+	play_dialog("DialogPlayer/VariableInjection")
 
 
 func _input(event):
@@ -56,14 +57,6 @@ func play_dialog(record_name : String):
 
 # Private Methods
 
-func _is_playing() -> bool:
-	return _Dialog_Box.visible
-
-
-func _is_waiting() -> bool:
-	return _SpaceBar_Icon.visible
-
-
 func _get_next_node():
 	_nid = _Story_Reader.get_nid_from_slot(_did, _nid, 0)
 	
@@ -80,8 +73,32 @@ func _get_tagged_text(tag : String, text : String) -> String:
 	return text.substr(start_index, substr_length)
 
 
+func _inject_variables(text : String) -> String:
+	var variable_count = text.count("<variable>")
+	
+	for i in range(variable_count):
+		var variable_name = _get_tagged_text("variable", text)
+		var variable_value = _Registry.lookup(variable_name)
+		var start_index = text.find("<variable>")
+		var end_index = text.find("</variable>") + "</variable>".length()
+		var substr_length = end_index - start_index
+		text.erase(start_index, substr_length)
+		text = text.insert(start_index, str(variable_value))
+	
+	return text
+
+
+func _is_playing() -> bool:
+	return _Dialog_Box.visible
+
+
+func _is_waiting() -> bool:
+	return _SpaceBar_Icon.visible
+
+
 func _play_node():
 	var text = _Story_Reader.get_text(_did, _nid)
+	text = _inject_variables(text)
 	var speaker = _get_tagged_text("speaker", text)
 	var dialog = _get_tagged_text("dialog", text)
 	
