@@ -93,9 +93,64 @@ story = {
 <dialog>and I know the system I'm running on is <variable>SYSTEM</variable>.</dialog>"
 }
 }
+},
+3: {
+"nodes": {
+1: {
+"links": {
+0: 3
+},
+"text": "<start>"
+},
+2: {
+"links": {
+
+},
+"text": "<end>"
+},
+3: {
+"links": {
+0: 4,
+1: 5,
+2: 6
+},
+"text": "<speaker>Wizard</speaker>
+<dialog>You must choose one of the three potions.</dialog>
+<choiceJSON>{\"Red Potion\" : 0, \"Blue Potion\" : 1, \"Green Potion\" : 2}</choiceJSON>"
+},
+4: {
+"links": {
+0: 7
+},
+"text": "<speaker>Red Potion</speaker>
+<dialog>HA HA For drinking me, the Romantic Red Potion, everyone will fall in love with you, but you can never love again!</dialog>"
+},
+5: {
+"links": {
+0: 7
+},
+"text": "<speaker>Blue Potion</speaker>
+<dialog>HA HA For drinking me, the Beluga Blue Potion, you are granted the gift of water breathing, but water blinds your eyes!</dialog>"
+},
+6: {
+"links": {
+0: 7
+},
+"text": "<speaker>Green Potion</speaker>
+<dialog>HA HA For drinking me, the Greedy Green Potion, you have all the money in the world, but can only buy things that start with the letter Y!</dialog>"
+},
+7: {
+"links": {
+0: 2
+},
+"text": "<speaker>Wizard</speaker>
+<dialog>Well, it could be worse, you're not dead after all...</dialog>"
+}
+}
 }
 }
 names = {
+"DialogPlayer/ChoiceBranching": 3,
 "DialogPlayer/Test": 1,
 "DialogPlayer/VariableInjection": 2
 }

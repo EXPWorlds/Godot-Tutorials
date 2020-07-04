@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://DaveTheDev Tutorials/12 Dialog Player/textures/menu_section_9patch.png" type="Texture" id=1]
 [ext_resource path="res://DaveTheDev Tutorials/12 Dialog Player/fonts/Cave-Story.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://DaveTheDev Tutorials/12 Dialog Player/Dialog_Player.gd" type="Script" id=3]
 [ext_resource path="res://DaveTheDev Tutorials/12 Dialog Player/Simulated_Registry.gd" type="Script" id=4]
+[ext_resource path="res://DaveTheDev Tutorials/12 Dialog Player/scenes/Option.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 38
@@ -33,6 +34,22 @@ size = 38
 font_data = ExtResource( 2 )
 
 [sub_resource type="Animation" id=5]
+resource_name = "PressSpaceBar"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
 resource_name = "PressSpaceBar"
 loop = true
 tracks/0/type = "value"
@@ -162,6 +179,74 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Dialog_Box/Body_NinePatchRect/SpaceBar_NinePatchRect"]
 autoplay = "PressSpaceBar"
 anims/PressSpaceBar = SubResource( 5 )
+
+[node name="SelectChoice_NinePatchRect" type="NinePatchRect" parent="Dialog_Box/Body_NinePatchRect"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -224.283
+margin_top = -37.6673
+margin_right = 31.7166
+margin_bottom = 10.3327
+rect_min_size = Vector2( 256, 48 )
+texture = ExtResource( 1 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SelectChoice_Label" type="Label" parent="Dialog_Box/Body_NinePatchRect/SelectChoice_NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 4 )
+text = "Select Choice"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Dialog_Box/Body_NinePatchRect/SelectChoice_NinePatchRect"]
+autoplay = "PressSpaceBar"
+anims/PressSpaceBar = SubResource( 6 )
+
+[node name="Option_List" type="VBoxContainer" parent="Dialog_Box/Body_NinePatchRect"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -540.0
+margin_top = -60.0
+margin_bottom = -12.0
+grow_vertical = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Option" parent="Dialog_Box/Body_NinePatchRect/Option_List" instance=ExtResource( 5 )]
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 540.0
+margin_bottom = 48.0
+
+[node name="Option2" parent="Dialog_Box/Body_NinePatchRect/Option_List" instance=ExtResource( 5 )]
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 52.0
+margin_right = 540.0
+margin_bottom = 100.0
+
+[node name="Option3" parent="Dialog_Box/Body_NinePatchRect/Option_List" instance=ExtResource( 5 )]
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 104.0
+margin_right = 540.0
+margin_bottom = 152.0
 
 [node name="Simulated_Registry" type="Node" parent="."]
 script = ExtResource( 4 )

@@ -3,9 +3,13 @@ extends Node
 onready var _Body_AnimationPlayer = find_node("Body_AnimationPlayer")
 onready var _Body_LBL = find_node("Body_Label")
 onready var _Dialog_Box = find_node("Dialog_Box")
+onready var _Option_List = find_node("Option_List")
 onready var _Registry = find_node("Simulated_Registry")
+onready var _SelectChoice_Icon = find_node("SelectChoice_NinePatchRect")
 onready var _Speaker_LBL = find_node("Speaker_Label")
 onready var _SpaceBar_Icon = find_node("SpaceBar_NinePatchRect")
+
+onready var _Option_Button_Scene = load("res://DaveTheDev Tutorials/12 Dialog Player/scenes/Option.tscn")
 
 var _did = 0
 var _nid = 0
@@ -23,8 +27,12 @@ func _ready():
 	
 	_Dialog_Box.visible = false
 	_SpaceBar_Icon.visible = false
+	_SelectChoice_Icon.visible = false
+	_Option_List.visible = false
 	
-	play_dialog("DialogPlayer/VariableInjection")
+	_clear_options()
+	
+	play_dialog("DialogPlayer/ChoiceBranching")
 
 
 func _input(event):
@@ -35,7 +43,11 @@ func _input(event):
 # Callback Methods
 
 func _on_Body_AnimationPlayer_animation_finished(anim_name):
-	_SpaceBar_Icon.visible = true
+	if _Option_List.get_child_count() == 0:
+		_SpaceBar_Icon.visible = true
+	else:
+		_SelectChoice_Icon.visible = true
+		_Option_List.visible = true
 
 
 func _on_Dialog_Player_pressed_spacebar():
@@ -44,6 +56,15 @@ func _on_Dialog_Player_pressed_spacebar():
 		_get_next_node()
 		if _is_playing():
 			_play_node()
+
+
+func _on_Option_clicked(slot):
+	_SelectChoice_Icon.visible = false
+	_Option_List.visible = false
+	_get_next_node(slot)
+	_clear_options()
+	if _is_playing():
+		_play_node()
 
 # Public Methods
 
@@ -57,8 +78,15 @@ func play_dialog(record_name : String):
 
 # Private Methods
 
-func _get_next_node():
-	_nid = _Story_Reader.get_nid_from_slot(_did, _nid, 0)
+func _clear_options():
+	var children = _Option_List.get_children()
+	for child in children:
+		_Option_List.remove_child(child)
+		child.queue_free()
+
+
+func _get_next_node(slot : int = 0):
+	_nid = _Story_Reader.get_nid_from_slot(_did, _nid, slot)
 	
 	if _nid == _final_nid:
 		_Dialog_Box.visible = false
@@ -101,10 +129,25 @@ func _play_node():
 	text = _inject_variables(text)
 	var speaker = _get_tagged_text("speaker", text)
 	var dialog = _get_tagged_text("dialog", text)
+	if "<choiceJSON>" in text:
+		var options = _get_tagged_text("choiceJSON", text)
+		_populate_choices(options)
 	
 	_Speaker_LBL.text = speaker
 	_Body_LBL.text = dialog
 	_Body_AnimationPlayer.play("TextDisplay")
+
+
+func _populate_choices(JSONtext : String):
+	var choices : Dictionary = parse_json(JSONtext)
+	
+	for text in choices:
+		var slot = choices[text]
+		var new_option_button = _Option_Button_Scene.instance()
+		_Option_List.add_child(new_option_button)
+		new_option_button.slot = slot
+		new_option_button.set_text(text)
+		new_option_button.connect("clicked", self, "_on_Option_clicked")
 
 
 
