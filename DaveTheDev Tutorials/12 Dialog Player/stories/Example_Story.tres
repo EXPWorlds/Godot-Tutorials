@@ -6,8 +6,10 @@
 script = ExtResource( 1 )
 TYPE = "EXP_Story_editor"
 names = {
+"DialogPlayer/CharacterTextures": 5,
 "DialogPlayer/ChoiceBranching": 3,
 "DialogPlayer/Test": 1,
+"DialogPlayer/TextureLibrary": 4,
 "DialogPlayer/VariableInjection": 2
 }
 story = {
@@ -237,6 +239,190 @@ story = {
 "slot_amount": 1,
 "text": "<speaker>Wizard</speaker>
 <dialog>Well, it could be worse, you're not dead after all...</dialog>",
+"type": "line"
+}
+}
+},
+4: {
+"available_nid": [  ],
+"groups": [  ],
+"human_readable_description": "A list of texture filepaths.",
+"name": "DialogPlayer/TextureLibrary",
+"nodes": {
+1: {
+"graph_offset": Vector2( 40, 40 ),
+"links": {
+
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "{
+\"emi\" : \"res://DaveTheDev Tutorials/12 Dialog Player/textures/characters/emi.png\",
+\"haruko\" : \"res://DaveTheDev Tutorials/12 Dialog Player/textures/characters/haruko.png\",
+\"mrpettles\" : \"res://DaveTheDev Tutorials/12 Dialog Player/textures/characters/mrpettles.png\",
+\"nez\" :  \"res://DaveTheDev Tutorials/12 Dialog Player/textures/characters/nez.png\",
+\"shin\" : \"res://DaveTheDev Tutorials/12 Dialog Player/textures/characters/shin.png\"
+}",
+"type": "line"
+}
+}
+},
+5: {
+"available_nid": [  ],
+"groups": [  ],
+"human_readable_description": "This is a test of the character textures.",
+"name": "DialogPlayer/CharacterTextures",
+"nodes": {
+1: {
+"graph_offset": Vector2( 40, 40 ),
+"links": {
+0: 3
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<start>",
+"type": "line"
+},
+2: {
+"graph_offset": Vector2( 1020, 760 ),
+"links": {
+
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<end>",
+"type": "line"
+},
+3: {
+"graph_offset": Vector2( 540, 40 ),
+"links": {
+0: 4
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Emi-chan</speaker>
+<dialog>Hey everyone! Let's have a Sea Day party!</dialog>
+<image>emi</image>",
+"type": "line"
+},
+4: {
+"graph_offset": Vector2( 1020, 40 ),
+"links": {
+0: 5
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Haruko-chan</speaker>
+<dialog>Mr. Pettles, what is a Sea Day?</dialog>
+<image>haruko</image>",
+"type": "line"
+},
+5: {
+"graph_offset": Vector2( 40, 220 ),
+"links": {
+0: 6
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Mr. Pettles</speaker>
+<dialog>I'm glad you asked Haruko-chan. There are, of course, no dumb questions.</dialog>
+<image>mrpettles</image>",
+"type": "line"
+},
+6: {
+"graph_offset": Vector2( 540, 220 ),
+"links": {
+0: 7
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Nez-chan</speaker>
+<dialog>Wait Mr. Pettles! I know about Sea Day, let me explain it.</dialog>
+<image>nez</image>",
+"type": "line"
+},
+7: {
+"graph_offset": Vector2( 1020, 220 ),
+"links": {
+0: 8
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Mr. Pettles</speaker>
+<dialog>Well, I suppose Nez-chan, go ahead...</dialog>
+<image>mrpettles</image>",
+"type": "line"
+},
+8: {
+"graph_offset": Vector2( 40, 400 ),
+"links": {
+0: 9
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Nez-chan</speaker>
+<dialog>Sea Day is a Japanese holiday on July 23rd.</dialog>
+<image>nez</image>",
+"type": "line"
+},
+9: {
+"graph_offset": Vector2( 540, 400 ),
+"links": {
+0: 10
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Nez-chan</speaker>
+<dialog>We all go to the beach and smack Suika with a stick.</dialog>
+<image>nez</image>",
+"type": "line"
+},
+10: {
+"graph_offset": Vector2( 1020, 400 ),
+"links": {
+0: 11
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Shin-kun</speaker>
+<dialog>Wait! Suika, what'za Suika?</dialog>
+<image>shin</image>",
+"type": "line"
+},
+11: {
+"graph_offset": Vector2( 40, 580 ),
+"links": {
+0: 12
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Nez-chan</speaker>
+<dialog>Suika means watermelon in Japanese.</dialog>
+<image>nez</image>",
+"type": "line"
+},
+12: {
+"graph_offset": Vector2( 540, 580 ),
+"links": {
+0: 13
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Shin-kun</speaker>
+<dialog>Oh, that'za relief! I was worried it was my head!</dialog>
+<image>shin</image>",
+"type": "line"
+},
+13: {
+"graph_offset": Vector2( 1020, 580 ),
+"links": {
+0: 2
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Haruko-chan</speaker>
+<dialog>We can whack your head too while we're at it!</dialog>
+<image>haruko</image>",
 "type": "line"
 }
 }

@@ -147,10 +147,132 @@ story = {
 <dialog>Well, it could be worse, you're not dead after all...</dialog>"
 }
 }
+},
+4: {
+"nodes": {
+1: {
+"links": {
+
+},
+"text": "{
+\"emi\" : \"res://DaveTheDev Tutorials/12 Dialog Player/textures/characters/emi.png\",
+\"haruko\" : \"res://DaveTheDev Tutorials/12 Dialog Player/textures/characters/haruko.png\",
+\"mrpettles\" : \"res://DaveTheDev Tutorials/12 Dialog Player/textures/characters/mrpettles.png\",
+\"nez\" :  \"res://DaveTheDev Tutorials/12 Dialog Player/textures/characters/nez.png\",
+\"shin\" : \"res://DaveTheDev Tutorials/12 Dialog Player/textures/characters/shin.png\"
+}"
+}
+}
+},
+5: {
+"nodes": {
+1: {
+"links": {
+0: 3
+},
+"text": "<start>"
+},
+2: {
+"links": {
+
+},
+"text": "<end>"
+},
+3: {
+"links": {
+0: 4
+},
+"text": "<speaker>Emi-chan</speaker>
+<dialog>Hey everyone! Let's have a Sea Day party!</dialog>
+<image>emi</image>"
+},
+4: {
+"links": {
+0: 5
+},
+"text": "<speaker>Haruko-chan</speaker>
+<dialog>Mr. Pettles, what is a Sea Day?</dialog>
+<image>haruko</image>"
+},
+5: {
+"links": {
+0: 6
+},
+"text": "<speaker>Mr. Pettles</speaker>
+<dialog>I'm glad you asked Haruko-chan. There are, of course, no dumb questions.</dialog>
+<image>mrpettles</image>"
+},
+6: {
+"links": {
+0: 7
+},
+"text": "<speaker>Nez-chan</speaker>
+<dialog>Wait Mr. Pettles! I know about Sea Day, let me explain it.</dialog>
+<image>nez</image>"
+},
+7: {
+"links": {
+0: 8
+},
+"text": "<speaker>Mr. Pettles</speaker>
+<dialog>Well, I suppose Nez-chan, go ahead...</dialog>
+<image>mrpettles</image>"
+},
+8: {
+"links": {
+0: 9
+},
+"text": "<speaker>Nez-chan</speaker>
+<dialog>Sea Day is a Japanese holiday on July 23rd.</dialog>
+<image>nez</image>"
+},
+9: {
+"links": {
+0: 10
+},
+"text": "<speaker>Nez-chan</speaker>
+<dialog>We all go to the beach and smack Suika with a stick.</dialog>
+<image>nez</image>"
+},
+10: {
+"links": {
+0: 11
+},
+"text": "<speaker>Shin-kun</speaker>
+<dialog>Wait! Suika, what'za Suika?</dialog>
+<image>shin</image>"
+},
+11: {
+"links": {
+0: 12
+},
+"text": "<speaker>Nez-chan</speaker>
+<dialog>Suika means watermelon in Japanese.</dialog>
+<image>nez</image>"
+},
+12: {
+"links": {
+0: 13
+},
+"text": "<speaker>Shin-kun</speaker>
+<dialog>Oh, that'za relief! I was worried it was my head!</dialog>
+<image>shin</image>"
+},
+13: {
+"links": {
+0: 2
+},
+"text": "<speaker>Haruko-chan</speaker>
+<dialog>We can whack your head too while we're at it!</dialog>
+<image>haruko</image>"
+}
+}
 }
 }
 names = {
+"DialogPlayer/CharacterTextures": 5,
 "DialogPlayer/ChoiceBranching": 3,
 "DialogPlayer/Test": 1,
+"DialogPlayer/TextureLibrary": 4,
 "DialogPlayer/VariableInjection": 2
 }

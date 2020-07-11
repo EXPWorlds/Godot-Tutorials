@@ -248,6 +248,15 @@ margin_top = 104.0
 margin_right = 540.0
 margin_bottom = 152.0
 
+[node name="Character_Texture" type="TextureRect" parent="Dialog_Box/Body_NinePatchRect"]
+margin_left = -16.0
+margin_top = -200.0
+margin_right = 144.0
+margin_bottom = -40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Simulated_Registry" type="Node" parent="."]
 script = ExtResource( 4 )
 [connection signal="animation_finished" from="Dialog_Box/Body_NinePatchRect/MarginContainer/Body_Label/Body_AnimationPlayer" to="." method="_on_Body_AnimationPlayer_animation_finished"]
